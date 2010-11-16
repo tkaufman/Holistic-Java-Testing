@@ -1,6 +1,9 @@
-package com.pillartechnology.speakerrate;
+package com.pillartechnology.speakerrate.controller;
 
 import org.junit.Test;
+
+import com.pillartechnology.speakerrate.controller.HomeController;
+
 import static org.junit.Assert.*;
 import static org.hamcrest.Matchers.*;
 
