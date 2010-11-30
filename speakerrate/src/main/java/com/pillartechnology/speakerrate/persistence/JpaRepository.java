@@ -5,8 +5,12 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaQuery;
 
+import org.springframework.transaction.annotation.Transactional;
+
+@Transactional
 public abstract class JpaRepository<E> implements Repository<E> {
 
 	private EntityManager entityManager;
@@ -44,6 +48,7 @@ public abstract class JpaRepository<E> implements Repository<E> {
 		return entityManager;
 	}
 
+	@PersistenceContext
 	public void setEntityManager(EntityManager entityManager) {
 		this.entityManager = entityManager;
 	}

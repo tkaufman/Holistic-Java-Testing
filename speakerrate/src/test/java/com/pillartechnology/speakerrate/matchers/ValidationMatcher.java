@@ -1,10 +1,16 @@
 package com.pillartechnology.speakerrate.matchers;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
-import javax.validation.*;
+import javax.validation.ConstraintViolation;
+import javax.validation.Validation;
+import javax.validation.Validator;
 
-import org.hamcrest.*;
+import org.hamcrest.Description;
+import org.hamcrest.Factory;
+import org.hamcrest.Matcher;
+import org.hamcrest.TypeSafeMatcher;
 
 public class ValidationMatcher extends TypeSafeMatcher<Object> {
 

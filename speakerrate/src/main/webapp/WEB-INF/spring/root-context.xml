@@ -8,11 +8,6 @@
 		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd">
 
 	<!-- Root Context: defines shared resources visible to all other web components -->
-	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
-		<property name="entityManagerFactory" ref="entityManagerFactory" />
-	</bean>
-	<tx:annotation-driven />
-
 	<jdbc:embedded-database id="dataSource"/>
 
 	<bean id="entityManagerFactory"
@@ -26,4 +21,9 @@
 			</bean>
 		</property>
 	</bean>
+
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+	<tx:annotation-driven />
 </beans>
