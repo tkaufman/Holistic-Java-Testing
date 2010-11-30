@@ -2,6 +2,7 @@ package com.pillartechnology.speakerrate.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;
 
@@ -12,6 +13,7 @@ public class Presentation extends EntityBase {
 	private Date presentedAt;
 
 	@NotNull
+	@Column(unique=true)
 	public String getTitle() {
 		return title;
 	}

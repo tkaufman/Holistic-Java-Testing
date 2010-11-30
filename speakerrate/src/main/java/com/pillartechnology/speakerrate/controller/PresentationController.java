@@ -25,7 +25,6 @@ public class PresentationController {
 		return "presentations/index";
 	}
 	
-	
 	@RequestMapping(value="/{id}",method = RequestMethod.GET)
 	public String show(@PathVariable long id, Model model) {
 		model.addAttribute("presentation", presentationRepository.findById(id));
@@ -41,7 +40,7 @@ public class PresentationController {
 	@RequestMapping(method = RequestMethod.POST)
 	public String create(@Valid Presentation presentation, BindingResult result) {
 		presentationRepository.persist(presentation);
-		return "redirect:presentations";
+		return "redirect:presentations/"+presentation.getId();
 	}
 
 	@Autowired

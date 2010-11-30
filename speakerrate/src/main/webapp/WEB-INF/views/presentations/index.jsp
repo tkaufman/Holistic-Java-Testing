@@ -10,7 +10,7 @@
 		<a href="presentations/new">Create new presentation</a>
 		<ul>
 		<c:forEach items="${presentations}" var="presentation">
-			<li>${presentation.title}</li>
+			<li><a href="presentations/${presentation.id}">${presentation.title}</a></li>
 		</c:forEach>
 		</ul>
 	</body>
