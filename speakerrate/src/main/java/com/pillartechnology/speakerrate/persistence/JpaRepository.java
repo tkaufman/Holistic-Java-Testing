@@ -35,6 +35,11 @@ public abstract class JpaRepository<E> implements Repository<E> {
 		entityManager.persist(transientEntity);
 	}
 
+	@Override
+	public void remove(E entity) {
+		entityManager.remove(entity);
+	}
+
 	public EntityManager getEntityManager() {
 		return entityManager;
 	}
@@ -42,4 +47,5 @@ public abstract class JpaRepository<E> implements Repository<E> {
 	public void setEntityManager(EntityManager entityManager) {
 		this.entityManager = entityManager;
 	}
+
 }

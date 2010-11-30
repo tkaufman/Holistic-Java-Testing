@@ -10,4 +10,5 @@ public interface Repository<E> {
 	
 	public void persist(E transientEntity);
 	
+	public void remove(E entity);
 }

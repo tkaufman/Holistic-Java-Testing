@@ -41,11 +41,27 @@ public class SpeakerRepositoryIntegrationTest {
 	
 	@Test
 	public void shouldPersistASpeakerAndThenFindIt() {
-		Speaker speaker = new Speaker();
-		speaker.setFirstName("John");
+		Speaker speaker = buildSpeakerFixture();
 		sut.persist(speaker);
 		
 		assertThat(speaker.getId(),is(not(0l)));
 		assertThat(sut.findById(speaker.getId()),is(not(nullValue())));
 	}
+
+	@Test
+	public void shouldRemoveASpeakerAndThenNotFindIt() {
+		Speaker speaker = buildSpeakerFixture();
+		sut.persist(speaker);
+		
+		sut.remove(speaker);
+		
+		assertThat(sut.findById(speaker.getId()), is(nullValue()));
+	}
+
+	private Speaker buildSpeakerFixture() {
+		Speaker speaker = new Speaker();
+		speaker.setFirstName("John");
+		return speaker;
+	}
+
 }

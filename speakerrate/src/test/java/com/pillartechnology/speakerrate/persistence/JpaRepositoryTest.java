@@ -73,6 +73,13 @@ public class JpaRepositoryTest {
 		
 		verify(entityManager).persist(entity);
 	}
+	
+	@Test
+	public void removeCallsRemove() {
+		sut.remove(entity);
+		
+		verify(entityManager).remove(entity);
+	}
 
 	private void resetEntityManagerToDefaultAnswer() {
 		//Deep stubs can result in several un-stubbable situations
