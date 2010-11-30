@@ -1,20 +1,29 @@
 package com.pillartechnology.speakerrate.controller;
 
-import static org.junit.Assert.*;
 import static org.hamcrest.Matchers.*;
-import org.junit.*;
+import static org.junit.Assert.*;
 
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.runners.MockitoJUnitRunner;
+import org.springframework.ui.Model;
+
+import com.pillartechnology.speakerrate.persistence.PresentationRepository;
+
+@RunWith(MockitoJUnitRunner.class)
 public class PresentationControllerTest {
 
-	private PresentationController sut = new PresentationController();
+	@InjectMocks private PresentationController sut = new PresentationController();
+
+	@Mock PresentationRepository presentationRepository;
+	@Mock private Model model;
 
 	@Test
-	public void shouldRedirectToList() {
+	public void shouldRedirectToIndex() {
+		String result = sut.index(model);
 		
-		sut.setPresentationRepository(null);
-		
-		String result = sut.list(null);
-		
-		assertThat(result, is("presentation/list.jsp"));
+		assertThat(result, is("presentations/index"));
 	}
 }
