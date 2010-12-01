@@ -16,7 +16,6 @@ public class Rating extends EntityBase {
 
 	public enum Status {SOLICITED, COMPLETE};
 	
-	@NotNull
 	@ManyToOne
 	private Presentation presentation;
 	

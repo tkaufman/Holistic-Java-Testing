@@ -9,11 +9,11 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class Presentation extends EntityBase {
 
+	@NotNull
+	@Column(unique=true)
 	private String title;
 	private Date presentedAt;
 
-	@NotNull
-	@Column(unique=true)
 	public String getTitle() {
 		return title;
 	}

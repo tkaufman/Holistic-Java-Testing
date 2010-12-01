@@ -8,10 +8,10 @@ import javax.persistence.MappedSuperclass;
 @MappedSuperclass
 public class EntityBase {
 
-	private long id;
-
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	private long id;
+
 	public long getId() {
 		return id;
 	}
