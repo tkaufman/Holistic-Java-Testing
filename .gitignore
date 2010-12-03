@@ -3,3 +3,6 @@
 .settings
 target
 .DS_Store
+
+speakerrate/speakerrate.properties
+speakerrate/speakerrate.script
