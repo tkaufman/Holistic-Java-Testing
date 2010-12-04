@@ -17,6 +17,7 @@
 		<jbehave.webapp.name>speakerrate</jbehave.webapp.name>
 		<jbehave.web.version>3.1.1</jbehave.web.version>
 		<jbehave.core.version>3.1.1</jbehave.core.version>
+		<jetty.port>4011</jetty.port>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -88,6 +89,12 @@
 					<webAppConfig>
 						<contextPath>/speakerrate</contextPath>
 					</webAppConfig>
+					<connectors>
+						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
+							<port>${jetty.port}</port>
+							<maxIdleTime>60000</maxIdleTime>
+						</connector>
+					</connectors>
 				</configuration>
 				<version>7.2.0.RC0</version>
 				<executions>

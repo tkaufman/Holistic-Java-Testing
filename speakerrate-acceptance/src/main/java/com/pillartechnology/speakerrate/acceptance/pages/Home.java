@@ -11,7 +11,7 @@ public class Home extends AbstractPage {
 	}
 
 	public void open() {
-		get("http://localhost:8080/speakerrate/");
+		get("http://localhost:4011/speakerrate/");
 		manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 
