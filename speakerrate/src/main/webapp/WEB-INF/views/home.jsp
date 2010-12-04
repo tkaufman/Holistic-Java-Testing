@@ -5,8 +5,10 @@
 	<title>Home</title>
 </head>
 <body>
-<h1>
-	Hello world!
-</h1>
+	<h1>SpeakerRate</h1>
+	<h2>Stuff you can do:</h2>
+	<ul>
+		<li><a href="presentations" class="presentations-index-link">Manage Presentations</a></li>
+	</ul>
 </body>
 </html>
