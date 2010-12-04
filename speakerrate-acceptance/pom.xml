@@ -10,12 +10,12 @@
 	<artifactId>speakerrate-acceptance</artifactId>
 
 	<name>SpeakerRate Acceptance Tests</name>
-	<description>Acceptance tests of the speakerrate application, using the WebDriver API of Selenium 2.</description>
+	<description>Acceptance tests of the SpeakerRate application, using the WebDriver API of Selenium 2.</description>
 	<packaging>jar</packaging>
 
 	<properties>
 		<jbehave.webapp.name>speakerrate</jbehave.webapp.name>
-		<jbehave.web.version>3.2-SNAPSHOT</jbehave.web.version>
+		<jbehave.web.version>3.1.1</jbehave.web.version>
 		<jbehave.core.version>3.1.1</jbehave.core.version>
 	</properties>
 	<dependencies>

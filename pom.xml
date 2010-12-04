@@ -32,18 +32,4 @@
 		</plugins>
 	</build>
 
-	<repositories>
-		<!-- JBoss -->
-		<repository>
-			<id>public-jboss</id>
-			<url>http://repository.jboss.org/nexus/content/groups/public-jboss/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
-
 </project>
