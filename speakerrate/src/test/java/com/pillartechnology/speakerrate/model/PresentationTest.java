@@ -4,7 +4,7 @@ import static com.pillartechnology.speakerrate.matchers.ValidationMatcher.*;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 
-import org.junit.*;
+import org.junit.Test;
 
 public class PresentationTest {
 	

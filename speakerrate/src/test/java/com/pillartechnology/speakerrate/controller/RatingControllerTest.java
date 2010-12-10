@@ -4,14 +4,15 @@ import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
-import org.junit.*;
-import org.junit.runner.*;
-import org.mockito.*;
-import org.mockito.runners.*;
-import org.springframework.ui.*;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.runners.MockitoJUnitRunner;
+import org.springframework.ui.Model;
 
-import com.pillartechnology.speakerrate.model.*;
-import com.pillartechnology.speakerrate.persistence.*;
+import com.pillartechnology.speakerrate.model.Rating;
+import com.pillartechnology.speakerrate.persistence.RatingRepository;
 
 @RunWith(MockitoJUnitRunner.class)
 public class RatingControllerTest {
