@@ -10,6 +10,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 public class Rating extends EntityBase {
@@ -19,7 +20,7 @@ public class Rating extends EntityBase {
 	@ManyToOne
 	private Presentation presentation;
 	
-	@NotNull
+	@NotBlank
 	@Email
 	private String email;
 	

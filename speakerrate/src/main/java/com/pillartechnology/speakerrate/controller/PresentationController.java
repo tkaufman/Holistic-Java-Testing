@@ -4,6 +4,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +15,7 @@ import com.pillartechnology.speakerrate.model.Presentation;
 import com.pillartechnology.speakerrate.persistence.PresentationRepository;
 
 @Controller
+@Transactional
 @RequestMapping("/presentations")
 public class PresentationController {
 

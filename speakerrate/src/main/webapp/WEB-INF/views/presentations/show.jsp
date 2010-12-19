@@ -12,3 +12,5 @@
 <span>Title:</span> <span>${presentation.title}</span>
 <br/>
 <span>Date:</span> <span>${presentation.presentedAt}</span>
+<br/>
+<a href="${presentation.id}/ratings/new">Rate this presentation</a>

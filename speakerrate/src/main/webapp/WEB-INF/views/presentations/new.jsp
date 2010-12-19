@@ -6,14 +6,17 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"  %>
 
 <form:form action="/speakerrate/presentations" method="post" modelAttribute="presentation">
-	
-	
 	<fieldset>
-		<form:label path="title">Title: </form:label>
-		<form:input path="title"/>
-		
-		<form:label path="presentedAt">Date: </form:label>
-		<form:input path="presentedAt"/>
+		<ul>
+			<li>
+				<form:label path="title">Title: </form:label>
+				<form:input path="title"/>
+			</li>
+			<li>
+				<form:label path="presentedAt">Date: </form:label>
+				<form:input path="presentedAt"/>
+			</li>
+		</ul>
 	</fieldset>
 	<button type="submit">Submit</button>
 </form:form>
