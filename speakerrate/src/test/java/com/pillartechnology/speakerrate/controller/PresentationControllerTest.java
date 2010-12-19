@@ -26,7 +26,7 @@ public class PresentationControllerTest {
 	
 	@InjectMocks private PresentationController sut = new PresentationController();
 
-	@Mock PresentationRepository presentationRepository;
+	@Mock private PresentationRepository presentationRepository;
 	@Mock private Model model;
 	
 	@Mock private Presentation presentation;
