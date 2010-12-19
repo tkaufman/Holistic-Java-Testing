@@ -40,7 +40,7 @@ public class RatingController {
 		if(result.hasErrors()) { return "ratings/new"; }
 		rating.setPresentation(presentationRepository.findById(presentationId));
 		ratingRepository.persist(rating);
-		return "redirect:"+rating.getId();
+		return "redirect:../../"+presentationId;
 	}
 
 	@Autowired

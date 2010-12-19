@@ -99,7 +99,7 @@ public class RatingControllerTest {
 	
 	@Test
 	public void createShouldRedirect() {
-		String expected = "redirect:"+RATING_ID;
+		String expected = "redirect:../../"+PRESENTATION_ID;
 
 		String result = sut.create(PRESENTATION_ID,rating,bindingResult);
 		
