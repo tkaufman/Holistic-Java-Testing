@@ -30,11 +30,11 @@ public class Rating extends EntityBase {
 	
 	@Min(0)
 	@Max(100)
-	private long contentScore;
+	private int contentScore;
 	
 	@Min(0)
 	@Max(100)
-	private long deliveryScore;
+	private int deliveryScore;
 	
 	@Size(max=255)
 	private String comment;
@@ -63,19 +63,19 @@ public class Rating extends EntityBase {
 		this.status = status;
 	}
 
-	public long getContentScore() {
+	public int getContentScore() {
 		return contentScore;
 	}
 
-	public void setContentScore(long contentScore) {
+	public void setContentScore(int contentScore) {
 		this.contentScore = contentScore;
 	}
 
-	public long getDeliveryScore() {
+	public int getDeliveryScore() {
 		return deliveryScore;
 	}
 
-	public void setDeliveryScore(long deliveryScore) {
+	public void setDeliveryScore(int deliveryScore) {
 		this.deliveryScore = deliveryScore;
 	}
 
