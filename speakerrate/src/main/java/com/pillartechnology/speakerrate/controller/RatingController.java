@@ -17,7 +17,7 @@ import com.pillartechnology.speakerrate.persistence.RatingRepository;
 
 @Controller
 @Transactional
-@RequestMapping("presentations/{presentationId}/ratings/")
+@RequestMapping("presentations/{presentationId}/ratings")
 public class RatingController {
 
 	private PresentationRepository presentationRepository;

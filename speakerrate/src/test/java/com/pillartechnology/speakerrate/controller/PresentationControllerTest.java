@@ -15,6 +15,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 
 import com.pillartechnology.speakerrate.model.Presentation;
 import com.pillartechnology.speakerrate.persistence.PresentationRepository;
@@ -27,9 +28,11 @@ public class PresentationControllerTest {
 	@InjectMocks private PresentationController sut = new PresentationController();
 
 	@Mock private PresentationRepository presentationRepository;
-	@Mock private Model model;
 	
+	@Mock private Model model;
 	@Mock private Presentation presentation;
+	@Mock private BindingResult bindingResult;
+	
 	private Set<Presentation> presentations;
 	
 	@Before
@@ -88,16 +91,33 @@ public class PresentationControllerTest {
 	public void createShouldRedirectToNewPresentationId() {
 		when(presentation.getId()).thenReturn(PRESENTATION_ID);
 		
-		String result = sut.create(presentation, null);
+		String result = sut.create(presentation, bindingResult);
 		
-		assertThat(result,is("redirect:presentations/"+PRESENTATION_ID));
+		assertThat(result,is("redirect:"+PRESENTATION_ID));
 	}
 	
 	@Test
-	public void shouldPersistNewPresentation() {
-		sut.create(presentation, null);
+	public void createShouldPersistNewPresentation() {
+		sut.create(presentation, bindingResult);
 		
 		verify(presentationRepository).persist(presentation);
 	}
+
+	@Test
+	public void createShouldReturnToNewFormOnValidationFailure() {
+		when(bindingResult.hasErrors()).thenReturn(true);
+		
+		String result = sut.create(presentation, bindingResult);
+		
+		assertThat(result,is("presentations/new"));
+	}
 	
+	@Test
+	public void createShouldNotPersistOnValidationFailure() {
+		when(bindingResult.hasErrors()).thenReturn(true);
+		
+		sut.create(presentation, bindingResult);
+		
+		verify(presentationRepository,never()).persist(isA(Presentation.class));
+	}
 }

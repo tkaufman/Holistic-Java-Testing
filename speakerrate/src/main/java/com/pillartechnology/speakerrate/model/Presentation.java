@@ -6,12 +6,16 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 @Entity
 public class Presentation extends EntityBase {
 
-	@NotNull
+	@NotBlank
 	@Column(unique=true)
 	private String title;
+	
+	@NotNull
 	private Date presentedAt;
 
 	public String getTitle() {

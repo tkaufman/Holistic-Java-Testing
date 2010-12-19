@@ -5,16 +5,18 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"  %>
 
-<form:form action="/speakerrate/presentations" method="post" modelAttribute="presentation">
+<form:form action="create" method="post" modelAttribute="presentation">
 	<fieldset>
 		<ul>
 			<li>
 				<form:label path="title">Title: </form:label>
 				<form:input path="title"/>
+				<form:errors path="title"/>
 			</li>
 			<li>
 				<form:label path="presentedAt">Date: </form:label>
 				<form:input path="presentedAt"/>
+				<form:errors path="presentedAt"/>
 			</li>
 		</ul>
 	</fieldset>

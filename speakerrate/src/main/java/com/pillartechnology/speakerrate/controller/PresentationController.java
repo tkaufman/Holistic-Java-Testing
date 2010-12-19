@@ -16,33 +16,34 @@ import com.pillartechnology.speakerrate.persistence.PresentationRepository;
 
 @Controller
 @Transactional
-@RequestMapping("/presentations")
+@RequestMapping("presentations")
 public class PresentationController {
 
 	private PresentationRepository presentationRepository;
 
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping
 	public String index(Model model) {
 		model.addAttribute("presentations", presentationRepository.findAll());
 		return "presentations/index";
 	}
 	
-	@RequestMapping(value="/{id}",method = RequestMethod.GET)
+	@RequestMapping(value="{id}")
 	public String show(@PathVariable long id, Model model) {
 		model.addAttribute("presentation", presentationRepository.findById(id));
 		return "presentations/show";
 	}
 	
-	@RequestMapping(value="/new",method = RequestMethod.GET)
+	@RequestMapping(value="new")
 	public String newForm(Model model) {
 		model.addAttribute(new Presentation());
 		return "presentations/new";
 	}
 
-	@RequestMapping(method = RequestMethod.POST)
+	@RequestMapping(value="create", method = RequestMethod.POST)
 	public String create(@Valid Presentation presentation, BindingResult result) {
+		if(result.hasErrors()) { return "presentations/new"; }
 		presentationRepository.persist(presentation);
-		return "redirect:presentations/"+presentation.getId();
+		return "redirect:"+presentation.getId();
 	}
 
 	@Autowired
