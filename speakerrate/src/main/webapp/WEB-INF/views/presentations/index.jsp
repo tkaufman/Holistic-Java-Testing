@@ -6,13 +6,15 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"  %>
 
 <html>
-	<body class="presentations-index">
+	<body>
 		<h1>Presentations</h1>
 		<a href="presentations/new">Create new presentation</a>
-		<ul>
-		<c:forEach items="${presentations}" var="presentation">
-			<li><a href="presentations/${presentation.id}">${presentation.title}</a></li>
-		</c:forEach>
-		</ul>
+		<div class="presentations-index">
+			<ul>
+				<c:forEach items="${presentations}" var="presentation">
+					<li><a href="presentations/${presentation.id}">${presentation.title}</a></li>
+				</c:forEach>
+			</ul>
+		</div>
 	</body>
 </html>
