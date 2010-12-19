@@ -1,0 +1,10 @@
+.errors {
+	background-color:#300;
+	border: 2px solid #100;
+	color: #fff;
+}
+
+li {
+	list-style: none;
+	line-height: 1.5em;
+}
