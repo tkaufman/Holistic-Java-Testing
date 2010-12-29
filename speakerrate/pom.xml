@@ -77,7 +77,7 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-		
+
 		<!-- Web -->
 		<dependency>
 			<groupId>opensymphony</groupId>
@@ -182,7 +182,23 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</repository>
+
+		<!-- For jasmine-maven-plugin -->
+		<repository>
+			<id>searls-maven-thirdparty</id>
+			<url>http://searls-maven-repository.googlecode.com/svn/trunk/thirdparty</url>
+		</repository>
 	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>searls-maven-releases</id>
+			<url>http://searls-maven-repository.googlecode.com/svn/trunk/releases</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>searls-maven-snapshots</id>
+			<url>http://searls-maven-repository.googlecode.com/svn/trunk/snapshots</url>
+		</pluginRepository>
+	</pluginRepositories>
 	<build>
 		<testResources>
 			<testResource>
@@ -213,6 +229,27 @@
 						<exclude>**/*ITest.java</exclude>
 					</excludes>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>searls</groupId>
+				<artifactId>jasmine-maven-plugin</artifactId>
+				<version>1.0.1-SNAPSHOT</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>generateManualRunner</goal>
+							<goal>resources</goal>
+							<goal>testResources</goal>
+							<goal>test</goal>
+						</goals>
+						<configuration>
+							<jsSrcDir>${project.basedir}/src/main/webapp/resources/js</jsSrcDir>
+							<preloadSources>
+								<preloadSource>vendor/jquery-1.4.4.min.js</preloadSource>
+							</preloadSources>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
