@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import java.util.Arrays;
 import java.util.List;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -14,6 +15,8 @@ import org.junit.Test;
  * B.) Rewrite these tests with Hamcrest coolness
  *  
  */
+
+@Ignore
 public class CrappyJUnitExample {
 
 	@Test
@@ -26,7 +29,7 @@ public class CrappyJUnitExample {
 	public void matchingListContentsIsEasy() {
 		List<String> coders = Arrays.asList("Justin", "Magnus", "Todd", "Patrick");
 		
-		assertTrue(coders.contains("Magnus"));
+		assertTrue(coders.contains("agnus"));
 		assertTrue(coders.contains("Justin"));
 	}
 		
@@ -35,20 +38,20 @@ public class CrappyJUnitExample {
 		Object a = new Object();
 		Object b = a;
 		
-		assertTrue(b == a);
+		assertTrue(b != a);
 	}
 
 	@Test
 	public void oneOfManyOptionsIsSometimesHard() {
 		String currentSpeaker = "Todd";
 		
-		List<String> potentials = Arrays.asList("Todd", "Justin", "Magnus", "Patrick");
+		List<String> potentials = Arrays.asList("Tod", "Justin", "Magnus", "Patrick");
 		assertTrue(potentials.contains(currentSpeaker));
 	}
 	
 	@Test
 	public void stringCheckingDoesntStink() {
-		String statement = "Bananas taste YUMMY";
+		String statement = "Bananas taste YUMY";
 		assertTrue(statement.startsWith("B"));
 		assertTrue(statement.equalsIgnoreCase("bananas taste yummy"));
 		assertEquals("Bananas    \n\t  taste       \n   YUMMY".replaceAll("\\s", ""), statement.replaceAll("\\s", ""));
