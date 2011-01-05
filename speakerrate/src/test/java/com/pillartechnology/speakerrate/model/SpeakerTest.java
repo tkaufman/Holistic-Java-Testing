@@ -1,46 +1,54 @@
 package com.pillartechnology.speakerrate.model;
 
+import static com.pillartechnology.speakerrate.matchers.ValidationMatcher.*;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 
-import java.util.Set;
-
-import javax.validation.ConstraintViolation;
-import javax.validation.Validation;
-import javax.validation.Validator;
-
-import org.junit.BeforeClass;
+import org.junit.Before;
 import org.junit.Test;
 
 
 public class SpeakerTest {
 	
-	private static Validator validator;
-
 	private Speaker sut = new Speaker();
 	
-	@BeforeClass
-	public static void createValidator() {
-		validator = Validation.buildDefaultValidatorFactory().getValidator();
+	@Before
+	public void setupDefaults() {
+		sut.setFirstName("Todd");
+		sut.setLastName("Pants");
+		sut.setEmail("todd@toddpants.com");
 	}
 	
+	@Test
+	public void defaultsShouldBeValid() {
+		assertThat(sut, is(valid()));
+	}
+
 	@Test
 	public void nullFirstNameIsNotValid() {
 		sut.setFirstName(null);
 		
-		Set<ConstraintViolation<Speaker>> violations = validator.validate(sut);
-		
-		assertThat(violations.size(),is(1));
+		assertThat(sut, is(not(valid())));
 	}
 	
 	@Test
-	public void populatedFirstNameIsValid() {
-		sut.setFirstName("pants");
+	public void nullLastNameIsNotValid() {
+		sut.setLastName(null);
 		
-		Set<ConstraintViolation<Speaker>> violations = validator.validate(sut);
-		
-		assertThat(violations.size(),is(0));	
+		assertThat(sut, is(not(valid())));
 	}
 	
-
+	@Test
+	public void nullEmailIsNotValid() {
+		sut.setEmail(null);
+		
+		assertThat(sut, is(not(valid())));
+	}
+	
+	@Test
+	public void malformedEmailIsNotValid() {
+		sut.setEmail("pants");
+		
+		assertThat(sut, is(not(valid())));
+	}
 }

@@ -11,7 +11,7 @@ import org.junit.Test;
 /**
  * Exercise 1
  * 
- * A.) Make these tests pass
+ * A.) Remove @Ignore below and make these tests pass
  * B.) Rewrite these tests with Hamcrest coolness
  *  
  */
