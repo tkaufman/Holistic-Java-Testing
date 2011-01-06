@@ -22,7 +22,7 @@ import com.pillartechnology.speakerrate.model.Speaker;
 @RunWith(SpringJUnit4ClassRunner.class)
 public class SpeakerRepositoryIntegrationTest {
 
-	private SpeakerRepository sut = new SpeakerRepository();
+	private JpaSpeakerRepository sut = new JpaSpeakerRepository();
 	
 	@PersistenceContext
 	private EntityManager entityManager;
@@ -61,6 +61,8 @@ public class SpeakerRepositoryIntegrationTest {
 	private Speaker buildSpeakerFixture() {
 		Speaker speaker = new Speaker();
 		speaker.setFirstName("John");
+		speaker.setLastName("Doe");
+		speaker.setEmail("JD@JD.com");
 		return speaker;
 	}
 
