@@ -243,9 +243,11 @@
 							<goal>test</goal>
 						</goals>
 						<configuration>
+							<browserVersion>FIREFOX_3_6</browserVersion>
 							<jsSrcDir>${project.basedir}/src/main/webapp/resources/js</jsSrcDir>
 							<preloadSources>
 								<preloadSource>vendor/jquery-1.4.4.min.js</preloadSource>
+								<preloadSource>vendor/jasmine-fixture-0.0.1.js</preloadSource>
 							</preloadSources>
 						</configuration>
 					</execution>
