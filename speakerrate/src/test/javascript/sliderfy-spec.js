@@ -1,3 +1,6 @@
+// Exercise 1 ัส(remove this feature first) make the slider initialize its value to whichever radio button is checked in the DOM.
+// Exercise 2 - print the current value of the slider as it changes to the UI
+
 describe('Slider-fier',function(){
 	var initiallyCheckedValue;
 	beforeEach(function(){
@@ -22,7 +25,7 @@ describe('Slider-fier',function(){
 		expect($.fn.sliderfy).toBeDefined();
 	});
 		
-	describe('Sliderfying a group of radio buttons',function(){
+	describe('sliderfying a group of radio buttons',function(){
 		var sliderfy, $container;
 		beforeEach(function(){
 			spyOn($.fn,'slider');
@@ -30,7 +33,7 @@ describe('Slider-fier',function(){
 			sliderfy = $container.sliderfy();
 		});
 		
-		describe('Configuration',function(){
+		describe('configuration',function(){
 			it('initializes the value to the checked radio button',function(){
 				expect(sliderfy.config.value).toBe(initiallyCheckedValue);
 			});
@@ -61,7 +64,7 @@ describe('Slider-fier',function(){
 				expect($container.find('span,label')).not.toExist();
 			});
 			
-			describe('Replacing the radio inputs with a hidden input',function(){
+			describe('replacing the radio inputs with a hidden input',function(){
 				var $hidden;
 				beforeEach(function(){
 					$hidden = $container.find('input[type=hidden]');
@@ -84,7 +87,7 @@ describe('Slider-fier',function(){
 			});
 		});
 		
-		describe('Interaction with jQuery Slider',function(){
+		describe('interaction with jQuery Slider',function(){
 			it('invokes jQuery UI slider with the configuration',function(){
 				expect($.fn.slider).toHaveBeenCalledWith(sliderfy.config);
 			});
