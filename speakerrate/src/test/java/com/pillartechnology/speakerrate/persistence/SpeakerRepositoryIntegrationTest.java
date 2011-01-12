@@ -3,8 +3,6 @@ package com.pillartechnology.speakerrate.persistence;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 
-import java.util.Set;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -30,13 +28,6 @@ public class SpeakerRepositoryIntegrationTest {
 	@Before
 	public void setupRepository() {
 		sut.setEntityManager(entityManager);
-	}
-	
-	@Test
-	public void shouldFindZeroSpeakers() {
-		Set<Speaker> results = sut.findAll();
-		
-		assertThat(results.size(),is(0));
 	}
 	
 	@Test
