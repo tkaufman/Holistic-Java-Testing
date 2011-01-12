@@ -10,6 +10,7 @@
 	<script type="text/javascript" src="/speakerrate/resources/js/ratings/new.js"></script>	
 </head>
 <body>
+	<span id="pageMetadata" class="ratings-new-page"></span>
 	<form:form action="create" method="post" modelAttribute="rating">
 		<fieldset>
 			<ul>

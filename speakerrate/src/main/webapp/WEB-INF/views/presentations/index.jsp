@@ -7,8 +7,9 @@
 
 <html>
 	<body>
+		<span id="pageMetadata" class="presentations-index-page"></span>
 		<h1>Presentations</h1>
-		<a href="presentations/new">Create new presentation</a>
+		<a href="presentations/new" class="presentations-new-link">Create new presentation</a>
 		<div class="presentations-index">
 			<ul>
 				<c:forEach items="${presentations}" var="presentation">

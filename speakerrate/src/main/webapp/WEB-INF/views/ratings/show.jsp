@@ -5,6 +5,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"  %>
 
+<span id="pageMetadata" class="ratings-show-page"></span>
 <h1>Rating Details</h1> 
 
 <span>ID:</span> <span>${rating.id}</span>

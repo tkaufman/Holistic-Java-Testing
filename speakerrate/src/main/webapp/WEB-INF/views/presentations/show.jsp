@@ -5,6 +5,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"  %>
 
+<span id="pageMetadata" class="presentations-show-page"></span>
 <h1>Presentation</h1> 
 
 <h2>Summary</h2>
@@ -24,7 +25,7 @@
 
 <h2>Ratings</h2>
 <div>
-	<a href="${presentation.id}/ratings/new">Rate this presentation</a>
+	<a href="${presentation.id}/ratings/new" class="ratings-new-link">Rate this presentation</a>
 	<br/>
 	<span>Average Content Score: ${presentation.averageContentScore}</span>
 	<span>Average Delivery Score: ${presentation.averageDeliveryScore}</span>
