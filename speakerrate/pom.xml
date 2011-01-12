@@ -233,7 +233,7 @@
 			<plugin>
 				<groupId>searls</groupId>
 				<artifactId>jasmine-maven-plugin</artifactId>
-				<version>1.0.1-SNAPSHOT</version>
+				<version>1.0.1-beta-4</version>
 				<executions>
 					<execution>
 						<goals>
