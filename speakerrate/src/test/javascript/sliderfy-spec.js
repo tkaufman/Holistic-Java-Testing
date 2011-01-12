@@ -31,10 +31,6 @@ describe('Slider-fier',function(){
 		});
 		
 		describe('configuration',function(){
-			it('initializes the value to the checked radio button',function(){
-				expect(sliderfy.config.value).toBe(initiallyCheckedValue);
-			});
-			
 			it('detects a min of 0',function(){
 				expect(sliderfy.config.min).toBe(0);
 			});
@@ -68,9 +64,6 @@ describe('Slider-fier',function(){
 				});
 				it('has the same name the radio buttons had',function(){
 					expect($hidden).toHaveAttr('name','contentScore');
-				});
-				it('has an initial value matching the checked radio button',function(){
-					expect($hidden).toHaveValue(initiallyCheckedValue);
 				});
 				describe('Changing the slider value',function() {
 					var expected = 80;
