@@ -1,6 +1,3 @@
-// Exercise 1 ัส(remove this feature first) make the slider initialize its value to whichever radio button is checked in the DOM.
-// Exercise 2 - print the current value of the slider as it changes to the UI
-
 describe('Slider-fier',function(){
 	var initiallyCheckedValue;
 	beforeEach(function(){
