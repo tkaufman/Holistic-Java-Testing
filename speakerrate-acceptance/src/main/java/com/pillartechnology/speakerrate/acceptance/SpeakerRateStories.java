@@ -27,13 +27,13 @@ import org.jbehave.web.selenium.SeleniumContext;
 import org.jbehave.web.selenium.SeleniumStepMonitor;
 import org.jbehave.web.selenium.WebDriverProvider;
 
-import com.pillartechnology.speakerrate.acceptance.pages.Pages;
+import com.pillartechnology.speakerrate.acceptance.pages.PageRetriever;
 import com.pillartechnology.speakerrate.acceptance.steps.SpeakerRateWebSteps;
 
 public class SpeakerRateStories extends JUnitStories {
 
 	private WebDriverProvider driverProvider = new PropertyWebDriverProvider();
-	private Pages pages = new Pages(driverProvider);
+	private PageRetriever pages = new PageRetriever(driverProvider);
 	private SeleniumContext context = new SeleniumContext();
 	private ContextView contextView = new LocalFrameContextView().sized(500, 100);
 

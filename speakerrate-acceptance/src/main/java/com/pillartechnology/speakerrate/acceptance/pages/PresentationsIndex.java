@@ -9,12 +9,12 @@ public class PresentationsIndex extends AbstractPage {
 		super(driverProvider);
 	}
 
-	public void open() {
-		findElement(By.className("presentations-index-link")).click();
+	public void pageIsShown() {
+		findElement(By.className("presentations-index-page"));
 	}
 
-	public void pageIsShown() {
-		findElement(By.className("presentations-index"));
+	public void clickCreateNewPresentation() {
+		findElement(By.className("presentations-new-link")).click();
 	}
 
 }

@@ -5,6 +5,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"  %>
 
+<span id="pageMetadata" class="presentations-new-page"></span>
 <form:form action="create" method="post" modelAttribute="presentation">
 	<fieldset>
 		<ul>
