@@ -57,7 +57,7 @@ public class SpeakerRateWebSteps {
 	
 	@Then("I am on the $name page")
 	public void userIsOnPage(String name) {
-		pages.retrievePage(name).pageIsShown();;
+		pages.retrievePage(name).pageIsShown();
 	}
 	
 }
