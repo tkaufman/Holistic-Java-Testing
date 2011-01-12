@@ -55,23 +55,9 @@ public class SpeakerRateWebSteps {
 		pages.retrievePage(ShowPresentation.class).clickRateThisPresentation();
 	}
 	
-	
 	@Then("I am on the $name page")
 	public void userIsOnPage(String name) {
 		pages.retrievePage(name).pageIsShown();;
 	}
-	
-	/**
-	 * newPresentationPage = presentationsPage.createNewPresentation.clickToNewPage();
-    assertTrue(newPresentationPage.titleField.isVisible());
-    assertTrue(newPresentationPage.dateField.isVisible());
-    
-    newPresentationPage.titleField.enter("Why Statics In Java Are Really, Really Evil" + Math.random());
-    newPresentationPage.dateField.enter("01/30/2011");
-    Presentation newPresentationSummaryPage = newPresentationPage.submit.clickToNewPage();
-    assertTrue(newPresentationSummaryPage.containsText("Rate this presentation"));
-    
-    PresentationRating ratingPage = newPresentationSummaryPage.rateThisPresentation.clickToNewPage();
-	 */
 	
 }
