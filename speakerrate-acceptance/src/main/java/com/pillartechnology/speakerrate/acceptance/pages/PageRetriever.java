@@ -11,6 +11,7 @@ public class PageRetriever {
 		this.driverProvider = driverProvider;
 	}
 
+	@SuppressWarnings("unchecked")
 	public AbstractPage retrievePage(String pageName) {
 		try {
 			return retrievePage((Class<? extends AbstractPage>)Class.forName(getClass().getPackage().getName()+"."+WordUtils.capitalize(pageName).replaceAll("\\s", "")));
